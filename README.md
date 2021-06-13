@@ -22,12 +22,8 @@ Now, I am hoping mac user have brew installed or any other package manager just 
     
 ### **Step 2**
 
-Open **Terminal**
-By default you will be in Home directory if not go to root folder and type **ls** command and find **.vim** folder if you not find it. No worries, Create it.
-
-![Screenshot 2021-06-14 at 12 04 32 AM](https://user-images.githubusercontent.com/54282666/121818334-286f0780-cca4-11eb-9336-ec25333486ec.png)
-
-<sub>***In above figure tilde ~ symbol means you are in Home Directory***</sub>
+Open **Terminal**.<br>
+By default you will be in Home directory if not go to root folder and type ***ls*** command and find **.vim** folder. If you can't see .vim folder, No worries, Create it.
 
     $ mkdir -p ~/.vim/colors
     
@@ -35,7 +31,7 @@ Now this code will create vim folder and inside that vim folder, colors folder w
 
 ### **Step 3**
 
-You may have theme file or if not https://github.com/rafi/awesome-vim-colorschemes visit this git repo navigate to colors and boom bunch of theme collections for vim. Clone this git repo and copy all themes from colors folder and paste it inside vim colors folder.
+You may have theme file or if not https://github.com/rafi/awesome-vim-colorschemes visit this git repo navigate to colors and boom 🤯 bunch of theme collections for vim. Clone this git repo and copy all themes from colors folder and paste it inside vim colors folder.
 
     For Linux ->
     $ cp {copy source file} {Dest_directory}
