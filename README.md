@@ -15,7 +15,7 @@ copy below code without dollar sign and paste it in your terminal and hit enter.
     For Linux ->
     $ sudo apt install vim
     
-Now, I am hoping mac user have brew installed or any other package manager just use that to install Vim.
+Now, I am hoping mac users have brew installed or any other package manager just use that to install Vim.
 
     For Mac using homebrew ->
     $ brew install vim
