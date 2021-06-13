@@ -41,7 +41,7 @@ You may have theme file or if not https://github.com/rafi/awesome-vim-colorschem
     
 ### **Step 4**
 
-Download .vimrc file **from this repo** paste it inside Home Directory. Now you are ready to rock. You will notice I said ***.vimrc*** but the file name in this repo is vimrc so you have rename it **.vimrc**. Now open any file with vim and see changes. 🚀 🚀
+Download .vimrc file from this ***repo*** paste it inside Home Directory. Now you are ready to rock. You will notice I said ***.vimrc*** but the file name in this repo is vimrc so you have rename it **.vimrc**. Now open any file with vim and see changes. 🚀 🚀
 
 # **Before** 
 ![Screenshot 2021-06-13 at 11 32 25 PM](https://user-images.githubusercontent.com/54282666/121817858-89e1a700-cca1-11eb-80ed-986a2c802afc.jpeg)
