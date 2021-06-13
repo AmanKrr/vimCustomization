@@ -27,7 +27,7 @@ By default you will be in Home directory if not go to root folder and type **ls*
 
 ![Screenshot 2021-06-14 at 12 04 32 AM](https://user-images.githubusercontent.com/54282666/121818334-286f0780-cca4-11eb-9336-ec25333486ec.png)
 
-<sub>***In above firgure tilde ~ symbol means you are in Home Directory***</sub>
+<sub>***In above figure tilde ~ symbol means you are in Home Directory***</sub>
 
     $ mkdir -p ~/.vim/colors
     
