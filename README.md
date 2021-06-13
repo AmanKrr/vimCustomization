@@ -8,14 +8,14 @@ We all love an awesome UI. So I’ve been wondering how to make my vim colorful.
 
 ### **Step 1**
 
-Check vim is installed on ur system or not. **NOTE: On Mac vim is installed by default with OS.** In case Vim is not installed by default install it.
+Check vim is installed on your system or not. **NOTE: On Mac vim is installed by default with OS.** In case Vim is not installed by default install it.
 
 copy below code without dollar sign and paste it in your terminal and hit enter.
 
     For Linux ->
     $ sudo apt install vim
     
-Now, i am hoping mac user have brew installed or any other package manager just use that to install Vim.
+Now, I am hoping mac user have brew installed or any other package manager just use that to install Vim.
 
     For Mac using homebrew ->
     $ brew install vim
@@ -27,7 +27,7 @@ By default you will be in Home directory if not go to root folder and type **ls*
 
 ![Screenshot 2021-06-13 at 10 44 33 PM](https://user-images.githubusercontent.com/54282666/121817322-54878a00-cc9e-11eb-84b0-d3d59ea65b00.png)
 
-*Tilde symbol means you are in Home Directory*
+<sub>Tilde symbol means you are in Home Directory</sub>
 
     $ mkdir -p ~/.vim/colors
     
