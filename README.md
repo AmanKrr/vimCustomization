@@ -27,7 +27,8 @@ By default you will be in Home directory if not go to root folder and type **ls*
 
 ![Screenshot 2021-06-13 at 10 44 33 PM](https://user-images.githubusercontent.com/54282666/121817322-54878a00-cc9e-11eb-84b0-d3d59ea65b00.png)
 
-<sub>Tilde symbol means you are in Home Directory</sub>
+<sub>***Tilde symbol means you are in Home Directory***</sub>
+
 
     $ mkdir -p ~/.vim/colors
     
