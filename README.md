@@ -25,7 +25,8 @@ Now, I am hoping mac user have brew installed or any other package manager just 
 Open **Terminal**
 By default you will be in Home directory if not go to root folder and type **ls** command and find **.vim** folder if you not find it. No worries, Create it.
 
-![Screenshot 2021-06-13 at 10 44 33 PM](https://user-images.githubusercontent.com/54282666/121817322-54878a00-cc9e-11eb-84b0-d3d59ea65b00.png)
+![Screenshot 2021-06-14 at 12 04 32 AM](https://user-images.githubusercontent.com/54282666/121818334-286f0780-cca4-11eb-9336-ec25333486ec.png)
+
 <sub>***Tilde ~ symbol means you are in Home Directory***</sub>
 
     $ mkdir -p ~/.vim/colors
