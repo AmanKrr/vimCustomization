@@ -2,7 +2,7 @@
 
 ## Hey Folks 👋
 
-We all love an awesome UI. So I’ve been wondering how to make my vim colorful. As you all know by default vim has no color for syntax(like in IDEs we see different colors for variable names, contant, function name etc.) you will see only single color in whole file, which is so boring and its a downside. And I personally dont like this. So after digging and reading some articles I was able to do my own customization its not a rocket science 😁. 
+We all love an awesome UI. So I’ve been wondering how to make my vim colorful. As you all know by default vim has no color for syntax(like in IDEs we see different colors for variable names, contant, function name etc.) you will see only single color in whole file, which is so boring and its a downside. And I personally dont like this. So after digging and reading some articles I was able to do my own customization its not a rocket science. 😁
 
 ***Lets get started.***
 
@@ -26,6 +26,7 @@ Open **Terminal**
 By default you will be in Home directory if not go to root folder and type **ls** command and find **.vim** folder if you not find it. No worries, Create it.
 
 ![Screenshot 2021-06-13 at 10 44 33 PM](https://user-images.githubusercontent.com/54282666/121817322-54878a00-cc9e-11eb-84b0-d3d59ea65b00.png)
+
 *Tilde symbol means you are in Home Directory*
 
     $ mkdir -p ~/.vim/colors
@@ -47,12 +48,11 @@ You may have theme file or if not https://github.com/rafi/awesome-vim-colorschem
 Download ~/.vimrc file **from this repo** paste it in root folder Now ready to rock. Open any file with vim and see changes. 🚀 🚀
 
 # **Before** 
-![Screenshot 2021-06-13 at 11 31 24 PM](https://user-images.githubusercontent.com/54282666/121817585-e6dc5d80-cc9f-11eb-8a91-89ca66ae7ff1.png)
-![Screenshot 2021-06-13 at 11 32 25 PM](https://user-images.githubusercontent.com/54282666/121817596-f9ef2d80-cc9f-11eb-9edd-209558df353e.png)
+![Screenshot 2021-06-13 at 11 32 25 PM](https://user-images.githubusercontent.com/54282666/121817858-89e1a700-cca1-11eb-80ed-986a2c802afc.jpeg)
 
 # **After**
-![Screenshot 2021-06-13 at 11 31 48 PM](https://user-images.githubusercontent.com/54282666/121817605-0c696700-cca0-11eb-8722-d921e728d3d1.png)
-![Screenshot 2021-06-13 at 11 32 55 PM](https://user-images.githubusercontent.com/54282666/121817612-14290b80-cca0-11eb-8629-93fac22a92c6.png)
+![Screenshot 2021-06-13 at 11 32 55 PM](https://user-images.githubusercontent.com/54282666/121817817-4424de80-cca1-11eb-8be8-c1afb3868bf6.jpeg)
+
 
 
 
