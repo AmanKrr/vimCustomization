@@ -68,6 +68,7 @@ vmap <c-k> -3
 "}}}
 
 "Spaces & Tabs {{{
+
 "number of visuals per Tab
 set tabstop=4
 
@@ -85,6 +86,7 @@ set smartindent
 "}}}
 
 "UI Config {{{  
+
 "Closer to looks of IDE 😀
 
 "show line number in editor 
