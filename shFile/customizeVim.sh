@@ -15,7 +15,7 @@ else
     mkdir ~/.vim
 fi
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c 'PluginInstall' -c 'q' -c 'q'
 
 sudo apt install build-essential cmake vim-nox python3-dev
