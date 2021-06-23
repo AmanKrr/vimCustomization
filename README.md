@@ -6,7 +6,7 @@ We all love an awesome UI. So I’ve been wondering how to make my vim colorful.
 
 #### For linux ONLY
 
-Run this in your terminal and sit back and relax. Please ensure **gcc** and **git** is install before running this command.
+Download shFile named folder from this repo and run customizeVim.sh shell script in your terminal and sit back and relax. Please ensure **gcc** and **git** is install before running this command.
 
     $ bash path/to/customizeVim.sh
 
