@@ -27,8 +27,15 @@ cd ~
 cd vimCustomization
 mv mainVimrc ~/
 cd ~
+mv mainVimrc .vimrc
+cd .vim
+mkdir colors
+cd ~
+cd vimCustomization
+cd colors
+mv grubbox.vim ~/.vim/colors/
+cd ~
 rm -rf vimrc
 rm -rf vimCustomization
-mv mainVimrc .vimrc
 echo "IF YCM SHOWS ANY ERROR PLEASE VISIT https://github.com/ycm-core/YouCompleteMe AND DO MANUAL INSTALLATION";
 vim
