@@ -14,7 +14,6 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-Plugin 'morhetz/gruvbox'
 Plugin 'preservim/nerdtree'
 "syntastic making vim opening file time slow
 "Plugin 'vim-syntastic/syntastic'
