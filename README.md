@@ -10,6 +10,9 @@ Run this in your terminal and sit back and relax. Please ensure **gcc** and **gi
 
     $ bash path/to/customizeVim.sh
 
+When you will open .vimrc file some plugin and their settings will be commented because they are slowing down vim. You can uncomment and source the file to see changes.
+
+    source ~/.vimrc
 
 # **Before** 
 ![Screenshot 2021-06-13 at 11 32 25 PM](https://user-images.githubusercontent.com/54282666/121817858-89e1a700-cca1-11eb-80ed-986a2c802afc.jpeg)
