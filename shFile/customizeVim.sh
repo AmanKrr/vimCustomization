@@ -20,7 +20,7 @@ vim -c 'PluginInstall' -c 'q' -c 'q'
 
 sudo apt install build-essential cmake vim-nox python3-dev
 sudo apt install mono-complete default-jdk
-cd ~/vim/bundle/YouCompleteMe
+cd ~/.vim/bundle/YouCompleteMe
 python3 install.py --all
 echo "Final Touch"
 cd ~
