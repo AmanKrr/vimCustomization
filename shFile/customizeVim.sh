@@ -4,7 +4,7 @@ cd vimCustomization
 mv vimrc ~/
 cd ..
 mv vimrc .vimrc
-rm -r vimCustomization
+rm -rf vimCustomization
 
 #checking directory
 FILE=~/vim 
