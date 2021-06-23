@@ -20,7 +20,7 @@ vim -c 'PluginInstall' -c 'q' -c 'q'
 
 sudo apt install build-essential cmake vim-nox python3-dev
 sudo apt install mono-complete golang nodejs default-jdk npm
-sudo apt install python3
+sudo apt-get install python
 cd ~/vim/bundle/YouCompleteMe
 python3 install.py --all
 echo "Final Touch"
@@ -29,6 +29,7 @@ cd vimCustomization
 mv mainVimrc ~/
 cd ..
 rm -rf vimrc
+rm -rf vimCustomization
 mv mainVimrc .vimrc
 echo "IF YCM SHOWS ANY ERROR PLEASE VISIT https://github.com/ycm-core/YouCompleteMe AND DO MANUAL INSTALLATION";
 vim
