@@ -28,12 +28,9 @@ cd vimCustomization
 mv mainVimrc ~/
 cd ~
 mv mainVimrc .vimrc
-cd .vim
-mkdir colors
 cd ~
 cd vimCustomization
-cd colors
-mv grubbox.vim ~/.vim/colors/
+mv colors ~/.vim/
 cd ~
 rm -rf vimrc
 rm -rf vimCustomization
