@@ -1,8 +1,46 @@
-"vim customization                                                                                                                                       
+"vim customization
 
 "NOTE: Never edit system vimrc its better to edit user vimrc...... This is user vimrc
 "These commands will auto load when vim is loaded 
 "If you don't want to use default setting just delete this file....Now you are good to go.
+
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+
+Plugin 'preservim/nerdtree'
+"syntastic making vim opening file time slow
+"Plugin 'vim-syntastic/syntastic'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
+"airline making vim slow
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+
+" Put your non-Plugin stuff after this line
 
 "color customization ------------------------------------------------------------->
 "syntax on for editor to show syntax color
@@ -14,21 +52,50 @@ set background=dark
 "Now apply favourite theme of your using colorscheme {theme name}...... my theme is  gruvbox
 colorscheme gruvbox
 
-"Spaces & Tabs ------------------------------------------------------------->
+"misc {{{
+
+set clipboard=unnamed
+set noerrorbells
+set scrolloff=10
+set backspace=indent,eol,start
+set nowrap
+set hidden
+"set laststatus=2
+set mouse=a
+nmap <c-j> +3
+vmap <c-j> +3
+nmap <c-k> -3
+vmap <c-k> -3
+
+"}}}
+
+"Spaces & Tabs {{{
+
 "number of visuals per Tab
 set tabstop=4
 
 "number of spaces in Tab when editing 
 set softtabstop=4
+set shiftwidth=4
 
 "turns into spaces
 set expandtab
 
-"UI Config ------------------------------------------------------------->  
+"indentation for your code
+set autoindent
+set smartindent
+
+"}}}
+
+"UI Config {{{  
+
 "Closer to looks of IDE 😀
 
 "show line number in editor 
 set number
+
+"with set number an issue come when you will copy numbers will also get copied. Fix only for mouse 😥
+"se mouse=a --> this will not allow you to copy and paste annoying
 
 "option cmd
 " ============== set cmd [this will show last command in very bottom right of vim]
@@ -38,7 +105,7 @@ set cursorline
 
 "give indentation a/c to your file type.
 "make sure to add indent file in your vim directory, So that this command work correctly otherwise it will not work and show error while using vim
-filetype indent on
+filetype indent on 
 
 "visual auto-complete for command menu
 set wildmenu
@@ -50,7 +117,10 @@ set lazyredraw
 "common feature shown in every editor
 set showmatch
 
-"Searching ------------------------------------------------------------->
+"}}}
+
+"Searching {{{
+
 "start search as character is entered
 set incsearch
 
@@ -60,11 +130,98 @@ set hlsearch
 "stop search highlight key mapped to <space>
 nnoremap <leader><space> :nohlsearch<CR>
 
-"Folding ------------------------------------------------------------->
+"}}}
+
+"Folding {{{ 
+
 "Useful when writing huge lines of code
 "enable folding
-set foldenable
+set foldenable foldmethod=marker foldlevel=0
+set modelines=1
 
+"}}}
+
+"setup for nerdTree {{{
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+"}}}
+
+"for syntastic {{{
+
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+"}}}
+
+"for ctrlP {{{
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_working_path_mode = '0' to search only my current directory in which i am
+let g:ctrlp_working_path_mode = '0'
+
+"}}}
+
+"setup for ycm {{{
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
+let g:ycm_python_binary_path = 'python'
+let g:ycm_complete_in_comments = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_semantic_triggers =  {
+  \ 'c' : ['re!\w{2}'],
+  \ 'cpp' : ['re!\w{2}'],
+  \ 'python' : ['re!\w{2}'],
+  \ }
+" resolve issue with snippets due to conflict, YCM and ultiSnip using same key TAB
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+" enable/disable YCM let g:loaded_youcompleteme = 0
+
+"}}}
+
+"setup for airline {{{
+
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#formatter = 'unique_tail'
+"let g:airline_extensions = []
+"let g:airline_highlighting_cache = 1
+
+"}}}
+
+"for ultiSnippets {{{
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+"}}}
+
+"CP settings,  compiling and debuging c++ {{{
+
+":autocmd BufNewFile *.cpp 0r ~/.vim/compititiveProgrammingSkeleton/skeleton.cpp
+nnoremap <F7> :w <CR> :!clang++ -std=c++11 %  && ./a.out <CR>
+nnoremap <F8> :!clang++ % && ./a.out <CR>
+nnoremap <c-a> :!./a.out <CR>
+
+"}}}
+
+" FOR PROFILING VIM ----> TROUBLESHOOT PLUGIN MAKING VIM SLOW
+nnoremap <silent> <leader>DD :exe ":profile start profile.log"<cr>:exe ":profile func *"<cr>:exe ":profile file *"<cr>
+nnoremap <silent> <leader>DP :exe ":profile pause"<cr>
+"nnoremap <silent> <leader>DC :exe ":profile continue"<cr>
+nnoremap <silent> <leader>DQ :noautocmd qall!<cr>
 
 "-----------------------------------------------------------------------------------------------------------------------------------------------------
 "-----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -73,4 +230,4 @@ set foldenable
 "These commands are enough for my work for now. You can add more commands based on ur needs
 "For More detail visit https://dougblack.io/words/a-good-vimrc.html
 
-"🤟🤟🤟                                                
+"🤟🤟🤟
