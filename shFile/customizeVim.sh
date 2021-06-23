@@ -2,17 +2,17 @@ sudo apt-get install vim
 git clone https://github.com/AMAN74458/vimCustomization
 cd vimCustomization
 mv vimrc ~/
-cd ..
+cd ~
 mv vimrc .vimrc
 #rm -rf vimCustomization
 
 #checking directory
-FILE=~/vim 
+FILE=~/.vim 
 if [ -d "$FILE" ]; then
     echo "vim folder exists"
 else
     echo "Creating vim folder in $HOME/"
-    mkdir ~/vim
+    mkdir ~/.vim
 fi
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/vim/bundle/Vundle.vim
@@ -23,10 +23,10 @@ sudo apt install mono-complete default-jdk
 cd ~/vim/bundle/YouCompleteMe
 python3 install.py --all
 echo "Final Touch"
-cd ..
+cd ~
 cd vimCustomization
 mv mainVimrc ~/
-cd ..
+cd ~
 rm -rf vimrc
 rm -rf vimCustomization
 mv mainVimrc .vimrc
