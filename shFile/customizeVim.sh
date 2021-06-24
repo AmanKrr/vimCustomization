@@ -23,15 +23,14 @@ cd ~/.vim/bundle/YouCompleteMe
 python3 install.py --all
 echo "Final Touch"
 cd ~
+rm -rf .vimrc
 cd vimCustomization
 mv mainVimrc ~/
 cd ~
 mv mainVimrc .vimrc
-cd ~
 cd vimCustomization
 mv colors ~/.vim/
 cd ~
-rm -rf vimrc
 rm -rf vimCustomization
 echo "IF YCM SHOWS ANY ERROR PLEASE VISIT https://github.com/ycm-core/YouCompleteMe AND DO MANUAL INSTALLATION";
 vim
