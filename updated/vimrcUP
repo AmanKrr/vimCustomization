@@ -1,0 +1,269 @@
+"vim customization
+
+"NOTE: Never edit system vimrc its better to edit user vimrc...... This is user vimrc
+"These commands will auto load when vim is loaded 
+"If you don't want to use default setting just delete this file....Now you are good to go.
+
+"#######################################################################################################################################################
+"#######################################################################################################################################################
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+
+Plugin 'preservim/nerdtree'
+"syntastic making vim opening file time slow
+"Plugin 'vim-syntastic/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
+"airline making vim slow
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+
+" Put your non-Plugin stuff after this line
+
+"#######################################################################################################################################################
+"#######################################################################################################################################################
+
+"color customization
+syntax on                   "syntax on for editor to show syntax color
+set background=dark         "set background of vim to dark
+colorscheme gruvbox         "Now apply favourite theme of your using colorscheme {theme name}...... my theme is  gruvbox
+
+
+
+
+"misc
+set clipboard=unnamed
+set noerrorbells
+set scrolloff=10
+set backspace=indent,eol,start
+set nowrap
+set hidden
+"set laststatus=2
+set mouse=a
+set dir=~/tmp
+nmap <c-j> +3
+vmap <c-j> +3
+nmap <c-k> -3
+vmap <c-k> -3
+
+
+
+
+"Spaces & Tabs
+set tabstop=4               "number of visuals per Tab
+set softtabstop=4           "number of spaces in Tab when editing
+set shiftwidth=4            "number of spaces in Tab when editing 
+set expandtab               "turns into spaces
+set autoindent              "indentation for your code
+set smartindent             "indentation for your code
+
+
+
+
+"UI Config
+set number                  "show line number in editor 
+set cursorline              "draws a horizontal highlight (or underline, depending on your colorscheme) on the line your cursor is currently on
+filetype indent on          "give indentation a/c to your file type. make sure to add indent file in your vim directory, So that this command work correctly otherwise it will not work and show error while using vim
+set wildmenu                "visual auto-complete for command menu
+set lazyredraw              "redraw only when we need 
+set showmatch               "Higlighting all matching char or string in editor, common feature shown in every editor
+
+
+
+
+"Searching
+set incsearch               "start search as character is entered
+set hlsearch                "highlight matches after search
+nnoremap <leader><space> :nohlsearch<CR>
+"stop search highlight key mapped to <space>
+
+
+
+
+"Folding
+set foldenable foldmethod=marker foldlevel=0                "Useful when writing huge lines of code
+set modelines=1                                             "enable folding
+
+
+
+
+"setup for nerdTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+
+
+
+"for syntastic {{{
+
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+"}}}
+
+
+
+
+"for ctrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_working_path_mode = '0' to search only my current directory in which i am
+let g:ctrlp_working_path_mode = '0'
+
+
+
+
+"setup for ycm
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
+let g:ycm_python_binary_path = 'python'
+let g:ycm_complete_in_comments = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_semantic_triggers =  {
+  \ 'c' : ['re!\w{2}'],
+  \ 'cpp' : ['re!\w{2}'],
+  \ 'python' : ['re!\w{2}'],
+  \ }
+" resolve issue with snippets due to conflict, YCM and ultiSnip using same key TAB
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+" enable/disable YCM let g:loaded_youcompleteme = 0
+
+
+
+
+"setup for airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+"let g:airline_extensions = []
+let g:airline_highlighting_cache = 1
+
+"fixing issue with visibility of powerline content 
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+    let g:airline_symbols.notexists = 'Ɇ'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" powerline symbols
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+"fix end 
+
+
+
+
+"for ultiSnippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
+
+
+"CP settings,  compiling and debuging c++
+":autocmd BufNewFile *.cpp 0r ~/.vim/compititiveProgrammingSkeleton/skeleton.cpp
+nnoremap <F7> :w <CR> :!clang++ -std=c++11 %  && ./a.out <CR>        
+nnoremap <F8> :!clang++ % && ./a.out <CR>
+nnoremap <c-a> :!./a.out <CR>
+
+
+
+
+"nerdTree Syntax Highlighting
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+
+"you can add these colors to your .vimrc to help customizing
+let s:brown = "905532"
+let s:aqua =  "3AFFDB"
+let s:blue = "689FB6"
+let s:darkBlue = "44788E"
+let s:purple = "834F79"
+let s:lightPurple = "834F79"
+let s:red = "AE403F"
+let s:beige = "F5C06F"
+let s:yellow = "F09F17"
+let s:orange = "D4843E"
+let s:darkOrange = "F16529"
+let s:pink = "CB6F6F"
+let s:salmon = "EE6E73"
+let s:green = "8FAA54"
+let s:lightGreen = "31B53E"
+let s:white = "FFFFFF"
+let s:rspec_red = 'FE405F'
+let s:git_orange = 'F54D27'
+
+let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['css'] = s:blue " sets the color of css files to blue
+
+let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
+
+let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
+
+let g:WebDevIconsDefaultFolderSymbolColor = s:beige " sets the color for folders that did not match any rule
+let g:WebDevIconsDefaultFileSymbolColor = s:blue " sets the color for files that did not match any rule
+
+
+
+
+" FOR PROFILING VIM ----> TROUBLESHOOT PLUGIN MAKING VIM SLOW
+nnoremap <silent> <leader>DD :exe ":profile start profile.log"<cr>:exe ":profile func *"<cr>:exe ":profile file *"<cr>
+nnoremap <silent> <leader>DP :exe ":profile pause"<cr>
+"nnoremap <silent> <leader>DC :exe ":profile continue"<cr>
+nnoremap <silent> <leader>DQ :noautocmd qall!<cr>
+
+
+"For More detail visit https://dougblack.io/words/a-good-vimrc.html
