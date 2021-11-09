@@ -1,10 +1,12 @@
 # .sh file for customizing vim [zsh mac] 
 # Run this file while you are in root [root symbol in unix ~ or your username].
 
+red=$(tput setaf 1)
+
 # Checking OS TYPE. 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Installing vim in linux.
-    echo "Installing VIM"
+    echo "${red}Installing VIM"
     echo
     sudo apt-get install vim
     echo
@@ -68,6 +70,7 @@ python3 install.py --all
 
 # Removing .vimrc and updating it.
 echo "Updating .vimrc"
+cd ~
 rm -rf .vimrc
 cd vimCustomization/updated
 mv vimrc ~/
@@ -76,7 +79,7 @@ mv vimrc .vimrc
 echo
 
 # Moving color folder into vim folder
-cd ~
+cd vimCustomization
 mv colors ~/.vim/
 cd ~
 
