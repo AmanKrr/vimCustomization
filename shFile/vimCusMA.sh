@@ -13,7 +13,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt install build-essential cmake vim-nox python3-dev
     sudo apt install mono-complete default-jdk
     echo
-else [[ "$OSTYPE" == "darwin"* ]]; then
+else [[ "$OSTYPE" == "darwin"* ]]
     # Checking Homebrew is installed or not. If installed then update else install.
     if [[ $(command -v brew) == "" ]]; then
         echo "Installing Homebrew"
