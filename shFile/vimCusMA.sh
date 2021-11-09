@@ -1,7 +1,7 @@
 # .sh file for customizing vim [zsh mac] 
 # Run this file while you are in root [root symbol in unix ~ or your username].
 
-red=$(tput setaf 1)
+red="\e[1;31m"
 
 # Checking OS TYPE. 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -86,5 +86,6 @@ cd ~
 # Cleaning
 echo "Cleaning. After finishing vim will launch."
 rm -rf vimCustomization
+vim
 echo
 
