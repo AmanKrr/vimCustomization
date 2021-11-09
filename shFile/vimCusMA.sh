@@ -1,12 +1,13 @@
 # .sh file for customizing vim [zsh mac] 
 # Run this file while you are in root [root symbol in unix ~ or your username].
 
-red="\e[1;31m"
+redS="\e[1;31m"
+redE="\e[0m"
 
 # Checking OS TYPE. 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Installing vim in linux.
-    echo "${red}Installing VIM"
+    echo "${red} Installing VIM ${redE}"
     echo
     sudo apt-get install vim
     echo
