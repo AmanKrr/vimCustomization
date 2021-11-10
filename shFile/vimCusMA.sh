@@ -7,11 +7,11 @@ redE="\e[0m"
 # Checking OS TYPE. 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Installing vim in linux.
-    echo "${red} Installing VIM ${redE}"
+    echo -e "${red} Installing VIM ${redE}"
     echo
     sudo apt-get install vim
     echo
-    echo "Installing CMake, vim-nox, python3, mono-complete, go-lang, nodejs, default-jdk, npm"
+    echo -e "${red} Installing CMake, vim-nox, python3, mono-complete, go-lang, nodejs, default-jdk, npm ${redE}"
     echo
     sudo apt install build-essential cmake vim-nox python3-dev
     sudo apt install mono-complete default-jdk
@@ -19,22 +19,22 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 else [[ "$OSTYPE" == "darwin"* ]]
     # Checking Homebrew is installed or not. If installed then update else install.
     if [[ $(command -v brew) == "" ]]; then
-        echo "Installing Homebrew"
+        echo -e "${red} Installing Homebrew ${redE}"
         echo
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         echo
         # Installing Vim. Pre-installed macOS system Vim does not support Python 3. So you need to install either a Vim that supports Python 3.
-        echo "Installing VIM"
+        echo -e "${red} Installing VIM ${redE}"
         echo
         brew install vim cmake 
         echo
     else
-        echo "Updating Homebrew"
+        echo -e "${red} Updating Homebrew ${redE}"
         echo
         brew update
         echo
         # Installing Vim. Pre-installed macOS system Vim does not support Python 3. So you need to install either a Vim that supports Python 3.
-        echo "Installing VIM"
+        echo -e "${red} Installing VIM ${redE}"
         echo
         brew install vim cmake   
         echo
@@ -52,10 +52,10 @@ echo
 # Checking directory exits or not.
 FILE=~/.vim
 if [ -d "$FILE" ]; then
-    echo "Vim folder exists."
+    echo -e "${red} Vim folder already exists. ${redE}"
     echo
 else
-    echo "Vim folder not exits. Creating vim folder in $HOME/"
+    echo -e "${red} Vim folder not exits. Creating vim folder in $HOME/ ${redE}"
     mkdir ~/.vim
     echo "Done"
     echo
@@ -70,7 +70,7 @@ cd ~/.vim/bundle/YouCompleteMe
 python3 install.py --all 
 
 # Removing .vimrc and updating it.
-echo "Updating .vimrc"
+echo -e "${red} Updating .vimrc ${redE}"
 cd ~
 rm -rf .vimrc
 cd vimCustomization/updated
@@ -85,8 +85,20 @@ mv colors ~/.vim/
 cd ~
 
 # Cleaning
-echo "Cleaning. After finishing vim will launch."
+echo -e "${red} Cleaning. After finishing vim will launch. ${redE}"
 rm -rf vimCustomization
+
+FILES=~/tmp
+if [ -d "$FILES" ]; then
+    echo -e "${red} tmp folder already exists. ${redE}"
+    echo
+else
+    echo -e "${red} Vim folder not exits. Creating vim folder in $HOME/ ${redE}"
+    mkdir ~/tmp
+    echo "Done"
+    echo
+fi
+
 vim
 echo
 
