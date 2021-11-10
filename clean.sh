@@ -33,28 +33,16 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt autoremove
     echo
 else [[ "$OSTYPE" == "darwin"* ]]
-    # Checking Homebrew is installed or not. If installed then update else install.
-    if [[ $(command -v brew) == "" ]]; then
-        echo -e "${redS}Installing Homebrew ${redE}"
-        echo
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        echo
-        # Installing Vim. Pre-installed macOS system Vim does not support Python 3. So you need to install either a Vim that supports Python 3.
-        echo -e "${redS}Installing VIM ${redE}"
-        echo
-        brew install vim cmake 
-        echo
-    else
-        echo -e "${redS}Updating Homebrew ${redE}"
-        echo
-        brew update
-        echo
-        # Installing Vim. Pre-installed macOS system Vim does not support Python 3. So you need to install either a Vim that supports Python 3.
-        echo -e "${redS}Installing VIM ${redE}"
-        echo
-        brew install vim cmake   
-        echo
-    fi
+    # Removing packages installed using Homebrew
+    echo -e "${redS} Removing Vim. ${redE}"
+    brew remove vim
+    echo
+    echo -e "${redS} Removing CMake. ${redE}"
+    brew remove cmake
+    echo
+    echo -e "${redS} Removing dependencies. ${redE}"
+    brew autoremove
+    echo
 fi
 
 # Checking directory exits or not.
@@ -78,6 +66,7 @@ echo
 FILES=~/tmp
 if [ -d "$FILES" ]; then
     echo -e "${redS}tmp folder already exists, Removing....... [created for swap files]${redE}"
+    rm -rf ~/tmp
     echo
 else
     echo -e "${redS}tmp folder already removed. $HOME/ ${redE}"
@@ -87,4 +76,5 @@ fi
 
 vim --version
 echo "SUCCESS"
+echo -e "${redS} For macOS, Homebrew is not removed. If you wish to remove it run this in your terminal =>. ${redE} /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)" "
 echo
