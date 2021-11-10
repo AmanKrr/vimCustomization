@@ -101,6 +101,7 @@ else
     echo
 fi
 
+rm -rf vimCusMA.sh
 vim
 echo
 
