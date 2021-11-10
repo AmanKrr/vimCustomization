@@ -76,6 +76,9 @@ fi
 
 vim --version
 echo "SUCCESS"
-echo -e "${redS} For macOS, Homebrew is not removed. If you wish to remove it run this in your terminal =>. ${redE} /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)" "
+echo
+echo -e "${redS}For macOS, Homebrew is not removed. If you wish to remove it run this in your terminal => ${redE}"
+echo
+echo '  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"'
 rm -rf ~/clean.sh
 echo
