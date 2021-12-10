@@ -77,11 +77,12 @@ fi
 vim --version
 
 if [[ $(command -v vim) == "" ]]; then
-    printf "SUCCESS"
+    printf "SUCCESS\n"
 else
     printf "Failed Cleaning"
 fi
 
-printf "SUCCESS"
-printf '${redS} For macOS, Homebrew is not removed. If you wish to remove it run this in your terminal =>. ${redE} /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)" '
+printf "${redS} For macOS, Homebrew is not removed. If you wish to remove it run this in your terminal =>. ${redE}\n" 
+printf '    /bin/bash -c $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)'
+printf "\n"
 printf "\n"
